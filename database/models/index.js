@@ -26,6 +26,7 @@ fs.readdirSync(__dirname)
       file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
   )
   .forEach((file) => {
+    // eslint-disable-next-line import/no-dynamic-require, global-require
     const model = require(path.resolve(__dirname, file))(
       sequelize,
       Sequelize.DataTypes
