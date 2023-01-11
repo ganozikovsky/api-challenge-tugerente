@@ -1,6 +1,6 @@
 # Challenge tuGerente API - Node.js & Express
 
-## Endpoints creados
+## ENDPOINTS
 
 * ### ***GET /rooms***
 #### _Es necesario para que los clientes puedan ver las habitaciones disponibles para reservar y seleccionar una._
@@ -31,5 +31,36 @@
 
 * ### ***PUT /reservations/:id/pay***
 #### _Es necesario para que los clientes puedan actualizar el estado de una reserva a "Pagado", proporcionando el importe pagado y el método de pago._
+
+---
+
+## DOCKER
+
+1. Configurar variables de entorno.
+
+2. 
+
+```
+docker-compose up -d
+```
+
+3. Una vez que los contenedores estén en ejecución, ejecutar los siguientes comandos para migrar y seedear la base de datos.
+
+```
+docker exec api-challenge-tugerente-server-1 npm run init:db  
+```
+
+```
+docker exec api-challenge-tugerente-server-1 npm run seeder 
+```
+
+4. El puerto por defecto es: 3000.
+
+---
+
+## POSTMAN
+
+1. Importar en Postman el archivo de configuracion llamado "api-tugerente.postman_collection.json" del repositorio para tener acceso a la colección y a los distintos endpoints.
+
 
 
