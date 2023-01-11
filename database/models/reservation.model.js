@@ -12,9 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     {
       state: DataTypes.ENUM('PENDING', 'PAID', 'CANCELLED'),
       room_id: DataTypes.INTEGER,
-      checkin_date: DataTypes.DATE,
-      checkout_date: DataTypes.DATE,
-      total_amount: DataTypes.DECIMAL(10, 2),
+      checkin_date: DataTypes.DATEONLY,
+      checkout_date: DataTypes.DATEONLY,
+      billing_info: DataTypes.JSON,
+      client_info: DataTypes.JSON,
+      amount_paid: DataTypes.DECIMAL(10, 2),
+      payment_method: DataTypes.ENUM(
+        'CREDIT_CARD',
+        'DEBIT_CARD',
+        'CASH',
+        'BANK_TRANSFER'
+      ),
     },
     {
       sequelize,

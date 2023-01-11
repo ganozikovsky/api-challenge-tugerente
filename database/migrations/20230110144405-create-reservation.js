@@ -17,16 +17,29 @@ module.exports = {
         allowNull: false,
       },
       checkin_date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       checkout_date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
-      total_amount: {
+      billing_info: {
+        type: Sequelize.JSON,
+      },
+      client_info: {
+        type: Sequelize.JSON,
+      },
+      amount_paid: {
         type: Sequelize.DECIMAL(10, 2),
-        allowNull: false,
+      },
+      payment_method: {
+        type: Sequelize.ENUM(
+          'CREDIT_CARD',
+          'DEBIT_CARD',
+          'CASH',
+          'BANK_TRANSFER'
+        ),
       },
       createdAt: {
         type: Sequelize.DATE,
