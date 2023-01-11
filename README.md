@@ -9,6 +9,7 @@
 * ### ***POST /reservations***
 #### Es necesario para que los clientes puedan crear una reserva proporcionando los detalles necesarios.
 #### Este endpoint permite a los clientes crear una reserva, proporcionando información como el ID de la habitación seleccionada, el rango de fechas de estadía, los datos de facturación y los detalles de identificación del cliente. 
+### El estado por defecto de una nueva reserva es PENDIENTE.
 
 
 * ### ***GET /reservations/:id***
@@ -22,7 +23,7 @@
 
 * ### ***DELETE /reservations/:id***
 #### _Es necesario para que los clientes puedan cancelar una reserva existente y modificar el estado._
-#### _Este endpoint permite a los clientes cambiar el estado de una reserva a "Cancelado", utilizando el ID de la reserva como parámetro._
+#### _Este endpoint permite a los clientes cambiar el estado PENDIENTE o PAGADO de una reserva a CANCELADO, utilizando el ID de la reserva como parámetro._
 
 
 * ### ***GET /reservations***
@@ -30,7 +31,7 @@
 
 
 * ### ***PUT /reservations/:id/pay***
-#### _Es necesario para que los clientes puedan actualizar el estado de una reserva a "Pagado", proporcionando el importe pagado y el método de pago._
+#### _Es necesario para que los clientes puedan actualizar el estado de una reserva PENDIENTE a PAGADO, proporcionando el importe pagado y el método de pago._
 
 ---
 
