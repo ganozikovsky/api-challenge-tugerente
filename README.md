@@ -9,7 +9,7 @@
 * ### ***POST /reservations***
 #### Es necesario para que los clientes puedan crear una reserva proporcionando los detalles necesarios.
 #### Este endpoint permite a los clientes crear una reserva, proporcionando información como el ID de la habitación seleccionada, el rango de fechas de estadía, los datos de facturación y los detalles de identificación del cliente. 
-### El estado por defecto de una nueva reserva es PENDIENTE.
+####  El estado por defecto de una nueva reserva es PENDIENTE.
 
 
 * ### ***GET /reservations/:id***
