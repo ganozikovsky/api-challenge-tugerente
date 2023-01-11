@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "9ed04e16-d81c-4ad9-ad6a-dddf3c6a9180",
+		"name": "api-tugerente",
+		"description": "API tuGerente Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19801432"
+	},
+	"item": [
+		{
+			"name": "Reservations",
+			"item": [
+				{
+					"name": "browse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						},
+						"description": "GET /api/reservations\n\n- Devuelve todas las reservas."
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								"1"
+							]
+						},
+						"description": "GET /api/reservations/:id\n\n- Devuelve una reserva en especifico que coincida con el ID pasado por parametro."
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"room_id\": 2,\r\n    \"checkin_date\": \"2022-12-30\",\r\n    \"checkout_date\": \"2023-01-12\",\r\n    \"billing_info\": {\r\n        \"name\": \"Juan Perez\",\r\n        \"city\": \"Buenos Aires\",\r\n        \"country\": \"AR\"\r\n    },\r\n    \"client_info\": {\r\n        \"email\": \"juanperez@gmail.com\",\r\n        \"phone\": \"555-444-333\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						},
+						"description": "POST /api/reservations\n\n- Crea una reserva con los campos pasados por body como JSON. Los campos minimos y requeridos son los que se encuentran a modo de ejemplo."
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"checkin_date\": \"2022-12-22\",\r\n    \"checkout_date\": \"2022-12-28\",\r\n    \"billing_info\": {\r\n        \"name\": \"Luis\",\r\n        \"city\": \"Gonzalez\",\r\n        \"country\": \"AR\"\r\n    },\r\n    \"client_info\": {\r\n        \"email\": \"luisgonzalez@gmail.com\",\r\n        \"phone\": \"543-489-332\"\r\n    }\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								"1"
+							]
+						},
+						"description": "PUT /api/reservations/:id\n\n- Editar una reserva en especifico que coincida con el ID del parametro de la ruta. No son requeridos todos los campos, basta solo con el que se quiere actualizar."
+					},
+					"response": []
+				},
+				{
+					"name": "pay",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_method\": \"CREDIT_CARD\",\r\n    \"amount_paid\": \"167.50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/4/pay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								"4",
+								"pay"
+							]
+						},
+						"description": "PUT /api/reservations/:id/pay\n\n- A través del JSON se envian los campos de la información de pago.\n- payment_method solo puede tomar los valores: 'CREDIT_CARD', 'DEBIT_CARD', 'BANK_TRANSFER', 'CASH'."
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservations",
+								"1"
+							]
+						},
+						"description": "DELETE /api/reservations/:id\n\n- Cambia el estado de la reserva de 'PENDING' o 'PAID' a 'CANCELLED' a la reserva que coincida con el ID del parametro de la ruta."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "browse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						},
+						"description": "GET /api/rooms\n\n- Devuelve todas las habitaciones."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
