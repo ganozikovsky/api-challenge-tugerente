@@ -16,10 +16,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      client_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
       checkin_date: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -30,10 +26,6 @@ module.exports = {
       },
       total_amount: {
         type: Sequelize.DECIMAL(10, 2),
-        allowNull: false,
-      },
-      payment_id: {
-        type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {
