@@ -1,8 +1,10 @@
 const express = require('express');
-const { get } = require('../controllers/index');
+const reservationsRouter = require('./reservations.router');
+const roomsRouter = require('./rooms.router');
 
 const router = express.Router();
 
-router.get('/', get);
+router.use('/reservations', reservationsRouter);
+router.use('/rooms', roomsRouter);
 
 module.exports = router;
