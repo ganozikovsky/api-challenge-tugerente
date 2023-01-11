@@ -127,9 +127,7 @@ module.exports = {
     const reservation = await Reservation.findOne({
       where: {
         id,
-        state: {
-          [Op.not]: 'PAID',
-        },
+        state: 'PENDING',
       },
     });
 
