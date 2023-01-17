@@ -1,4 +1,4 @@
-# Challenge tuGerente API - Node.js & Express
+# API REST - Hotel - Node.js & Express
 
 ## ENDPOINTS
 
